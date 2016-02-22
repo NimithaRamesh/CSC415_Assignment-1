@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>CSC 415</title>
+        <meta name="description" content="CSC415 project">
+        <link rel="stylesheet" href="main.css">
+
+        <script src="scripts/os.js"></script>
+        <script src="scripts/io.js"></script>
+
+		<script src="scripts/IOdevice.js"></script>
+		<script src="scripts/OperatingSystem.js"></script>
+		<script src="scripts/process3.js"></script>
+
+    </head>
+    <body>
+        <script>
+
+			// Bank Book Calculator process
+			var info = getAccInfom();
+
+			for(var i = 0; i < acctTrans.length; i++)
+                {
+                    acctBal += acctTrans[i];
+
+                }
+            document.write(" Your account balance is : $" + acctBal);
+
+			// Contact Manager process
+			var newContact = getContact();
+
+
+            // Update a security file process
+			var userlist = getUsernameList();
+			var passlist = getPasswordList();
+			var keySearchValue = "iamsuperman";
+			var new_name = "iambatman";
+			var new_pass = "iloveyousuperman";
+			var flag = 0;
+			var result;
+			var pos;
+
+			for (var i = 0; i < getNumbOfAccounts(); i++) {
+				if (keySearchValue == userlist[i]) {
+					setUserAndPass(new_name, new_pass, i);
+					flag = 1;
+					pos = i;
+					break;
+				}
+			}
+
+			if (flag == 0){
+				result = "Username " + keySearchValue + " didn't found. Error\n";
+			} else {
+				result = "Successful changed the username and password."
+						+"\nThe new username is: " + getUsernameAt(pos)
+						+"\nThe new password is: " + getPasswordAt(pos);
+			}
+
+			// Find Routes process
+
+
+			// Calculate Vectors process
+
+			// Calculate Stats process
+
+      /* Nimitha's block */
+      var statsAvg = 0;
+      var statPosition=0;
+      for(var j=statPosition; j<statPosition+20; j++){
+        statsAvg += getStatistics(statPosition);
+      }
+      statPosition = statPosition+20;
+      /* End of Nimitha's block */
+
+			// Others creative process
+
+			// console stuff here at the end.
+			console.log("Bank Book Calculator: " + info);
+      console.log("Contact Manager: " + newContact);
+			console.log("Update a security file: " + result);
+      console.log("Stats average: " + statsAvg/20);
+
+        </script>
+
+
+    </body>
+</html>

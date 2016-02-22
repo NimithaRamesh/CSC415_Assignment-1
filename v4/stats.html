@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>CSC 415</title>
+        <meta name="description" content="CSC415 project">
+        <link rel="stylesheet" href="main.css">
+
+        <script src="scripts/os.js"></script>
+        <script src="scripts/io.js"></script>
+
+		<script src="scripts/IOdevice.js"></script>
+		<script src="scripts/OperatingSystem.js"></script>
+		<script src="scripts/process3.js"></script>
+
+
+    </head>
+    <body>
+        <script>
+
+
+      /* Nimitha's block */
+      var tempStat = 0;
+      var statPosition=0;
+      var statsLength = getLength();
+
+      function calculateAverage(){
+        for(var j=statPosition; j<statPosition+20 && j<statsLength; j++){
+          tempStat += getStatistics(j);
+        }
+        statPosition = statPosition+20;
+        return tempStat;
+      }
+
+      var stats1 = calculateAverage();
+      console.log("Stats1: "+ stats1);
+      var stats2 = calculateAverage();
+      console.log("Stats2: "+ stats2);
+      var stats3 = calculateAverage();
+      console.log("Stats3: "+ stats3);
+
+
+      function getLength(){
+        var length = getStatsLength();
+        return length;
+      }
+      var statsAvg = (stats1 + stats2 + stats3) / statsLength;
+
+
+      /* End of Nimitha's block */
+
+      /*Mansi's block */
+
+      var contactPosition=0;
+      var testName = "";
+      var foundName = false;
+      var contactName = "Harish Chowdhary";
+      var contactsLength = getContactLength();
+
+      function getContactLength(){
+        var length = getContactLen();
+        return length;
+      }
+
+      function findContact ()
+      {
+            //console.log("Contact: " + newContact);
+            for (i = contactPosition; i < contactPosition+10 && i<=contactsLength; i++)
+            {
+                  if (contacts[i] == contactName)
+                  {
+					               testName = contacts[i];
+					                    foundName = true;
+                  }
+             }
+             contactPosition = contactPosition+10;
+             console.log("Inside for" + contactPosition);
+        }
+      findContact();
+      findContact();
+      findContact();
+      findContact();
+      findContact();
+			if(foundName==false){
+				document.write("Contact not found!");
+				document.write("<br>");
+			}else{
+				document.write("Contact found: " + testName);
+        document.write("<br>");
+			}
+
+      /* End of Mansi's block*/
+
+      document.write("The SO2 average collected from "+ statsLength +" different cities in the US is: " + statsAvg);
+
+        </script>
+
+
+    </body>
+</html>
