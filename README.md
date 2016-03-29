@@ -8,11 +8,11 @@ Step 1:
 
 Step 2:
 
-* The working version is "Assignment 2 v11".
+* The working version is "final_project2".
 
 Step 3:
 
- * Download the entire folder "Assignment 2 v11" to your local disk.
+ * Download the entire folder "final_project2" to your local disk.
 
 Steps 4:
 
