@@ -1,49 +1,53 @@
 # CSC415_OperatingSystem
-To test Assignment 2.
 
-Steps 1:
+RUNNING INSTRUCTIONS:
 
--In "Branch", change that to "Project_2".
+Step 1:
 
-Steps 2:
+* Switch to branch "Project_2".
 
--The working version of assignment 2 is the "Assignment 2 v11" folder.
+Step 2:
 
-Steps 3:
+* The working version of assignment 2 is in the "Assignment 2 v11" folder.
 
--download the whole folder "Assignment 2 v11".
+Step 3:
+
+ * Download the entire folder "Assignment 2 v11" to the local disk.
 
 Steps 4:
 
--drag the file "Display.html" to a browser (Firefox).
+* Open the file "Display.html" on browser (Firefox / Chrome).
 
--Open the "console" in Firefox. To do that, Right click on the browser, then "Inspect Element (Q)", then click on Console.
+* To view the web console, go to Tools -> Web Developer -> Web Console (Firefox) or Right click on thr browser -> Inspect -> Console tab
 
--the "console" is to see the changing state when you are running a process(es).
+* The "console" displays the states of all processes
 
-Steps 5:
+Step 5:
 
-type the command that you want to test.
+* Type in the command that you want to test.
 
-*****HELP*****
+*****COMMANDS*****
 
-Available command:
-
-cat FileName // use ls to check the available file.
+cat FileName 
+// use ls to check the available files.
 
 man CommandName
 
 ls
 
-kill FileName // use ps to check the available file.
+kill FileName 
+// use ps to check the available file.
 
-ps  // this command show all the running process(es) in the system.
+ps  
+// this command shows all running processes in the system.
 
 clear
 
-copy FileName NewFileName // use ls to check the available file.
+copy FileName NewFileName 
+// use ls to check the available files.
 
-delete FileName  // use ls to check the available file.
+delete FileName  
+// use ls to check the available files.
 
 
 
