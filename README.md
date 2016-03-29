@@ -8,17 +8,17 @@ Step 1:
 
 Step 2:
 
-* The working version of assignment 2 is in the "Assignment 2 v11" folder.
+* The working version is "Assignment 2 v11".
 
 Step 3:
 
- * Download the entire folder "Assignment 2 v11" to the local disk.
+ * Download the entire folder "Assignment 2 v11" to your local disk.
 
 Steps 4:
 
 * Open the file "Display.html" on browser (Firefox / Chrome).
 
-* To view the web console, go to Tools -> Web Developer -> Web Console (Firefox) or Right click on thr browser -> Inspect -> Console tab
+* To view the web console, go to Tools -> Web Developer -> Web Console (Firefox) or Right click on thr browser -> Inspect -> Console  (Chrome)
 
 * The "console" displays the states of all processes
 
