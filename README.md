@@ -20,7 +20,7 @@ Steps 4:
 
 * To view the web console, go to Tools -> Web Developer -> Web Console (Firefox) 
 
-* The "console" displays the states of all processes
+* The "console" displays the states of all running processes
 
 Step 5:
 
