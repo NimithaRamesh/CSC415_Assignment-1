@@ -26,9 +26,13 @@ var manPages = {};
 manPages["ls"] = "List information about the current directory.";
 manPages["man"] = "Displays the manual pages.";
 manPages["cat"] = "Concatenate files and print on the standard output.";
+manPages["more"] = "Display a file.";
 //manPages["wc"] = "Print out file's word count";
 manPages["clear"] = "Clears your screen if this is possible.";
 manPages["ps"] = "Displays information about of the active processes.";
+manPages["kill"]= "Stop the active process.";
+manPages["copy"]= "Copy a file with a new name.";
+manPages["delete"]= "Delete a file.";
 
 function parseString(inputString) {
 	
