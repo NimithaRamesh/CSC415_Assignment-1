@@ -16,9 +16,9 @@ Step 3:
 
 Steps 4:
 
-* Open the file "Display.html" on browser (Firefox / Chrome).
+* Open the file "Display.html" on browser (Firefox).
 
-* To view the web console, go to Tools -> Web Developer -> Web Console (Firefox) or Right click on thr browser -> Inspect -> Console  (Chrome)
+* To view the web console, go to Tools -> Web Developer -> Web Console (Firefox) 
 
 * The "console" displays the states of all processes
 
@@ -28,15 +28,16 @@ Step 5:
 
 *****COMMANDS*****
 
-cat FileName 
-// use ls to check the available files.
+cat FileName
+
+// use ls to display available files.
 
 man CommandName
 
 ls
 
 kill FileName 
-// use ps to check the available file.
+// use ps to check for an available file.
 
 ps  
 // this command shows all running processes in the system.
@@ -44,10 +45,10 @@ ps
 clear
 
 copy FileName NewFileName 
-// use ls to check the available files.
+// use ls to display available files.
 
 delete FileName  
-// use ls to check the available files.
+// use ls to display available files.
 
 
 
