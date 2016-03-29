@@ -3,11 +3,11 @@ To test Assignment 2.
 
 Steps 1:
 
--Change the "Branch" to "Project_2".
+-In "Branch", change that to "Project_2".
 
 Steps 2:
 
--The final version of assignment 2 is in "Assignment 2 v11".
+-The working version of assignment 2 is the "Assignment 2 v11" folder.
 
 Steps 3:
 
@@ -18,6 +18,8 @@ Steps 4:
 -drag the file "Display.html" to a browser (Firefox).
 
 -Open the "console" in Firefox. To do that, Right click on the browser, then "Inspect Element (Q)", then click on Console.
+
+-the "console" is to see the changing state when you are running a process(es).
 
 Steps 5:
 
@@ -35,7 +37,7 @@ ls
 
 kill FileName // use ps to check the available file.
 
-ps
+ps  // this command show all the running process(es) in the system.
 
 clear
 
