@@ -37,17 +37,21 @@ man CommandName
 ls
 
 kill FileName 
+
 // use ps to check for an available file.
 
-ps  
+ps 
+
 // this command shows all running processes in the system.
 
 clear
 
 copy FileName NewFileName 
+
 // use ls to display available files.
 
-delete FileName  
+delete FileName 
+
 // use ls to display available files.
 
 
