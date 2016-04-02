@@ -54,6 +54,8 @@ delete FileName
 
 // use ls to display available files.
 
+nameOfFile.js
 
+// to run a process. Use ls to check the file name. For example: banckAccount.js 
 
 
