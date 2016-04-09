@@ -205,8 +205,8 @@ function commandCall(input) {
 		break;
 		
 		case 'more':
-			
-		break;more(input[1]);
+			more(input[1]);
+		break;
 		
 		case 'cat':
 			cat(input[1]);
