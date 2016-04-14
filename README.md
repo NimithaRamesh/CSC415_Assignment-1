@@ -14,7 +14,7 @@ Step 2:
 
 * The "console" displays the states of all running processes
 
-Step 5:
+Step 3:
 
 * Type in the command that you want to test.
 
