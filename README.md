@@ -4,17 +4,9 @@ RUNNING INSTRUCTIONS:
 
 Step 1:
 
-* Switch to branch "Project_2".
-
-Step 2:
-
-* The working version is "final_project2".
-
-Step 3:
-
  * Download the entire folder "final_project2" to your local disk.
 
-Steps 4:
+Step 2:
 
 * Open the file "Display.html" on browser (Firefox).
 
@@ -22,7 +14,7 @@ Steps 4:
 
 * The "console" displays the states of all running processes
 
-Step 5:
+Step 3:
 
 * Type in the command that you want to test.
 
