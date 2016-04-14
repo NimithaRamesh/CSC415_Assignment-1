@@ -4,17 +4,9 @@ RUNNING INSTRUCTIONS:
 
 Step 1:
 
-* Switch to branch "Project_2".
+ * Download the entire folder "final_project4 v3" to your local disk.
 
 Step 2:
-
-* The working version is "final_project2".
-
-Step 3:
-
- * Download the entire folder "final_project2" to your local disk.
-
-Steps 4:
 
 * Open the file "Display.html" on browser (Firefox).
 
@@ -25,6 +17,12 @@ Steps 4:
 Step 5:
 
 * Type in the command that you want to test.
+
+*****New Process****
+
+The new process added to Project 4 is characterCounter.js. 
+
+This process simulates a multithreaded environment. Multiple threads read from the same file and update a single shared array of character counts. The process uses Mutex locks to avoid a race condition.
 
 *****COMMANDS*****
 
