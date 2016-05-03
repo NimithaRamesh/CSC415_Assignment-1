@@ -1,4 +1,7 @@
 var queueProcess = [-1];
+const MAX_SPACE = 100; // 100 megabytes of space = 100,000 kilobytes
+var available_Space = 100;
+
 
 //var length;
 // Initialize the start index of all processes
@@ -216,7 +219,13 @@ function commandCall(input) {
 	switch(input[0]) {
 		
 		case 'ls':
-			ls();
+			var currentDir = getCurrDir();
+
+			if (dirIndex == -1) {
+				ls(currentDir[0]);
+			} else {
+				ls(currentDir);
+			}
 		break;
 		
 		case 'more':
@@ -254,6 +263,20 @@ function commandCall(input) {
 		case 'man':
 			man(input);
 		break;
+		
+		case 'dir':
+                dir();
+        break;
+		
+		case 'cd':
+			cd(input);
+		break;
+		
+		case 'test.js':
+                //initd();
+				diningPhilosophers();
+        break;
+		
 		
 		default: // Error
 		
@@ -310,11 +333,13 @@ function processesCall(input) {
 			setState(7, "Ready");
 			psList.push(psHashMap[7]);
 		break;
-		
+		/*
 		case 'test.js':
-		
+			//testcase();
+			//copyOver(5);
+			initd();
 		break;
-		
+		*/
 		default: // Error
 			
 		break;
@@ -392,6 +417,6 @@ function getNameListLength(){
 
 function testcase() {
 	
-	
+	console.log("Hello");
 	
 }

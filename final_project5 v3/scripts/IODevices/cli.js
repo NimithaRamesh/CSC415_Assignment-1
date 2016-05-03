@@ -9,6 +9,9 @@ commandHashMap["kill"]= "kill";
 commandHashMap["man"]= "man";
 commandHashMap["copy"]= "copy";
 commandHashMap["delete"]= "delete";
+commandHashMap["dir"]= "dir";
+commandHashMap["cd"] = "cd";
+commandHashMap["test.js"]= "Test case";
 
 var ignoreKeys = {};
 ignoreKeys["Tab"]= "Tab";
@@ -33,6 +36,10 @@ manPages["ps"] = "Displays information about of the active processes.";
 manPages["kill"]= "Stop the active process.";
 manPages["copy"]= "Copy a file with a new name.";
 manPages["delete"]= "Delete a file.";
+manPages["dir"]= "Return the amount of avaiable drive space";
+manPages["cd"] = "Change working directory to desired directory.";
+
+var dirIndex = -1; 
 
 function parseString(inputString) {
 	
@@ -50,7 +57,7 @@ function parseString(inputString) {
 		}
 	}
 }
-
+/*
 function ls() {
 	for(var i = 0; i < directories.length; i++) {	
 		document.getElementById("displaydevice").innerHTML  += "<br>" 
@@ -63,6 +70,126 @@ function ls() {
 		+ directories[i].name + "";
 	}
 }
+*/
+function ls(currLoc) {
+
+	var x = 0;
+	/*
+	console.log("index : " + dirIndex);
+	console.log("curr : " + currLoc);
+	console.log("curr l: " + currLoc.length);
+	console.log("curr l: " + currLoc[0]);
+	console.log("curr l: " + currLoc[0].length);
+	console.log("curr l: " + currLoc[0].name);
+	*/
+	if (dirIndex != -1) 
+	{
+		x = 1;
+		for(var i = 0; i < currLoc.length - x; i++) 
+		{	
+			document.getElementById("displaydevice").innerHTML  += "<br>" 
+			+ currLoc[i].file.access 
+			+ "&nbsp&nbsp&nbsp&nbsp"
+			+ currLoc[i].file.owner
+			+ "&nbsp&nbsp&nbsp&nbsp" 
+			+ currLoc[i].file.type
+			+ "&nbsp&nbsp&nbsp&nbsp"
+			+ currLoc[i].file.time 
+			+ "&nbsp&nbsp&nbsp&nbsp" 
+			+ currLoc[i].file.name + "";
+		}
+	}
+	else
+	{
+		//console.log("ddddddddddd : " + dirIndex);
+		for(var i = 0; i < currLoc.length - x; i++) 
+		{	
+			document.getElementById("displaydevice").innerHTML  += "<br>" 
+			+ currLoc[i].access 
+			+ "&nbsp&nbsp&nbsp&nbsp"
+			+ currLoc[i].owner
+			+ "&nbsp&nbsp&nbsp&nbsp" 
+			+ currLoc[i].type
+			+ "&nbsp&nbsp&nbsp&nbsp"
+			+ currLoc[i].time 
+			+ "&nbsp&nbsp&nbsp&nbsp" 
+			+ currLoc[i].name + "";
+		}
+	}
+}
+
+function getCurrDir()
+{
+	var jMap = [jagatFolder, jagatHashMap];
+	var mMap=[mansiFolder, mansiHashMap];
+	var yMap = [yongcaiFolder, yongcaiHashMap];
+	var tMap = [tonyFolder, tonyHashMap];
+	var nMap = [nimithaFolder, nimithaHashMap];
+	var aMap = [asafFolder, asafHashMap];
+	var mainHashMap = [directories,filesMap];
+
+	switch(dirIndex)
+	{
+		case -1:
+			return mainHashMap;
+		break;
+		case 0:
+			return jMap;
+		break;
+		case 1: 
+			return mMap;
+		break;
+		case 2: 
+			return yMap;
+		break;
+		case 3: 
+			return tMap;
+		break;
+		case 4: 
+			return nMap;
+		break;
+		case 5: 
+			return aMap;
+		break;
+		default: return mainHashMap;
+	} 
+}
+
+function cd(destination)
+{
+	if( destination[1] == "..")
+	{
+		if(dirIndex >= 0 && dirIndex <= 4)
+		{
+			dirIndex = -1;
+			cDirectory = "";
+		}
+		else
+		{
+			document.getElementById("displaydevice").innerHTML  += "<br>"  
+			+ "Invalid destination.";
+		}
+	}
+	else
+	{
+		for(var i=0; i < directories.length; i++)
+		{
+		 	if(directories[i].name == destination[1])
+		 	{
+		 		dirIndex = i;
+				cDirectory = "\\" + destination[1];
+				break;
+		 	}
+		}
+
+		if(dirIndex == -1)
+		{
+			document.getElementById("displaydevice").innerHTML  += "<br>"  
+			+ "No such directory found";
+		}
+	}	
+
+} 
 
 function clear() {
 	document.getElementById("displaydevice").innerHTML  = "";
@@ -180,4 +307,9 @@ function delete2(input) {
 	} else {
 		document.getElementById("displaydevice").innerHTML  += "<br>File name not found.";
 	}
+}
+
+function dir(){
+    document.getElementById("displaydevice").innerHTML += "Amount of avaliable drive space: " + available_Space;
+
 }
