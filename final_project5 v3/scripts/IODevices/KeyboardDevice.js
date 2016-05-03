@@ -5,10 +5,12 @@ function checkKeyPressed(e) {
 }
 			
 var inputString = "";
-var temp = "";
-var temp2 = "";
+var keyBDtemp = "";
+var keyBDtemp2 = "";
 var startLineCounter = 12;
 var startLineIndex = 12;
+var cDirectory = "";
+var keyBDflag1 = false;
 
 function getkeyString(e) {
 // if (flag == 1)
@@ -26,27 +28,30 @@ function getkeyString(e) {
 				
 			} else {
 						
-				temp = document.getElementById("displaydevice").innerHTML;
+				keyBDtemp = document.getElementById("displaydevice").innerHTML;
 				
 				if (startLineCounter > 12) {
 					inputString = "";
-					for (var i = 0; i < temp.length - 1; i++) {
-						temp2 += temp[i];
+					for (var i = 0; i < keyBDtemp.length - 1; i++) {
+						keyBDtemp2 += keyBDtemp[i];
 						if (i >= startLineIndex) {
-							inputString += temp[i];					
+							inputString += keyBDtemp[i];					
 						}
 					}				
+					
 					startLineCounter--;			
-					document.getElementById("displaydevice").innerHTML  = temp2;		
-					temp2 = "";
+					document.getElementById("displaydevice").innerHTML  = keyBDtemp2;		
+					keyBDtemp2 = "";
 				}		
 			}
 		} else { 
 
 			parseString(inputString);
 			
-			newLineReset();
-
+			if (keyBDflag1 == true) {
+				newLineReset();
+			}
+			
 			startLineCounter = 12;
 			
 			inputString = "";
@@ -55,7 +60,9 @@ function getkeyString(e) {
 }
 
 function newLineReset() {
-	document.getElementById("displaydevice").innerHTML  += "<br> C:\\csc415> ";
+	
+	document.getElementById("displaydevice").innerHTML  += "<br> C:\\csc415" + cDirectory + "> ";
 			
 	startLineIndex = document.getElementById("displaydevice").innerHTML.length;
+	//console.log("length: " + currentDir.length);
 }

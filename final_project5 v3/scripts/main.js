@@ -11,9 +11,12 @@ timedCount();
 
 /* Jagat's block */
 var acctBal = 0;
+var a1p1Space = 1;
 
 function process1(startPositionP1) {
-				
+	// call space request
+	//spaceRequest(a1p1Space);
+	
     var info = getAccInfo();
 
     for(var i = startPositionP1; i < startPositionP1+5 && i< info.length; i++)
@@ -22,13 +25,18 @@ function process1(startPositionP1) {
     }
             
 	if (startPositionP1+5 >= info.length) {		
+		// call release space
+		//releaseSpace(a1p1Space);
+		
 		return -1;
 	}			
 
 	startPositionP1 += 5;
 			
-	return startPositionP1;   		
+	// call release space
+	//releaseSpace(a1p1Space);	
 	
+	return startPositionP1;   		
 }
 /* End of Jagat's block */
 
@@ -176,3 +184,46 @@ function process7(startPositionP7) {
 }
 
 /* End of Asaf's block */
+
+//
+
+//var total_space = 100;
+//var available_space = 100; //decrement as you use the space
+//var space = 5; //space required by file
+//var new_file;
+var a5p4 = 1;
+
+function copyOver(file_space) {
+	
+	var copy_input = [" ", "bankAccount.js", "CopyFile"];
+	
+	if(spaceRequest(a5p4))
+	{
+		for (var i = 0; file_space <= available_Space; i++) 
+		{
+			if (spaceRequest(file_space))
+			{
+				copy_input[2] = "CopyFile" + i; //
+				copy(copy_input);
+				
+				if (!checkSpace(file_space))
+				{
+					console.log ("Sorry, not enough space!");
+					break;
+				}				
+			}
+			else 
+			{
+				console.log ("Sorry, not enough space!");
+			}	
+		}
+		releaseSpace(a5p4);	
+	} 
+	else 
+	{
+		console.log ("Sorry, not enough space!");
+	}
+	
+}
+
+

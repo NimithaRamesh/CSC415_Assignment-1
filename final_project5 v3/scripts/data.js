@@ -1,13 +1,35 @@
+// main directories
 var filesMap = {};
-filesMap["bankAccount.js"]= "Bank Account";
-filesMap["contactManager.js"]= "Contact Manager";
-filesMap["securityFile.js"]= "Security File";
+filesMap["jagatFolder"]= "Bank Account";
+filesMap["mansiFolder"]= "Contact Manager";
+filesMap["yongcaiFolder"]= "Security File";
 //filesMap["findRoutes.js"]= "Find Routes";
-filesMap["calculateVectors.js"]= "Calculate Vectors";
-filesMap["calculateStats.js"]= "Calculate Stats";
-filesMap["phoneBook.js"]= "Phone Book";
+filesMap["tonyFolder"]= "Calculate Vectors";
+filesMap["nimithaFolder"]= "Calculate Stats";
+filesMap["asafFolder"]= "Phone Book";
 filesMap["characterCounter.js"]= "character Counter";
-filesMap["test.js"]= "test case";
+//filesMap["test.js"]= "test case";
+
+var jagatHashMap = {};
+jagatHashMap["bankAccount.js"] = "Bank Account";
+
+var mansiHashMap = {};
+mansiHashMap["contactManager.js"] = "Contact Manager";
+
+var yongcaiHashMap = {};
+yongcaiHashMap["securityFile.js"] = "Security File";
+yongcaiHashMap["characterCounter.js"] = " character Counter";
+
+var tonyHashMap = {};
+tonyHashMap["calculateVectors.js"] = "Calculate Vectors";
+
+var nimithaHashMap = {};
+nimithaHashMap["calculateStats.js"] = "Calculate Stats";
+
+var asafHashMap = {};
+asafHashMap["phoneBook.js"] = "Phone Book";
+
+//*************************************************************************************************************
 
 var psHashMap = {};
 psHashMap[0]= "bankAccount.js";
@@ -19,12 +41,23 @@ psHashMap[5]= "calculateStats.js";
 psHashMap[6]= "phoneBook.js";
 psHashMap[7]= "characterCounter.js";
 
+
+// ***************************************************************************************************************
 var acctTrans = [
 42, 107, -142, -33, 192, -19, 186, 137, 97, -68, 169, 78, 85, 92,124,128,141,-109,-157,-30,84,93,190,-9,196,-139,
 144,-155,-166,-183,-163,-128,33,-9,-40,167,69,163,14,176,165,36,9,115,180,72,-145,147,73,120,-53,131,27,-150,139,
 -28,-119,101,-16,-194,41,175,152,133,166,-128,129,101,-150,-116,170,41,-37,-9,61,111,-57,-57,53,-60,-35,168,126,-111,
 -95,165,35,93,158,184,79,44,-30,-27,121,-179,-6,-124,-163,-7 ];
 
+function getAccInfo(){
+  return acctTrans;
+}
+
+function getAccLength() {
+	return acctTrans.length;
+}
+
+// ***************************************************************************************************************
 var contacts = ["Mansi Saini",
                 "Harish Chowdhary",
                 "Patrick Starr",
@@ -76,6 +109,15 @@ var contacts = ["Mansi Saini",
                 "Brandon Smith",
                 "Yongcai Huang"
 ];
+
+function getContacts(){
+  return contacts;
+}
+
+function getContactLngth(){
+  return contacts.length;
+}
+// ***************************************************************************************************************
 
 var arraylistUser = [
 "clawshortcrust",
@@ -145,6 +187,35 @@ var arraylistPass = [
 
 var securityList = [arraylistUser , arraylistPass];
 
+var numberOfAccount = 30;
+
+function getUsernames() {
+	return arraylistUser;
+}
+
+function getPasswords() {
+	return arraylistPass;
+}
+
+
+function getUsernameAtPos(pos) {
+	return arraylistUser[pos];
+}
+
+function getPasswordAtPos(pos) {
+	return arraylistPass[pos];
+}
+
+function getNumberOfAccount() {
+	return numberOfAccount;
+}
+
+function setUsernameAndPasswrod(new_name, new_password, position) {
+	arraylistUser[position] = new_name;
+	arraylistPass[position] = new_password;
+}
+
+// ***************************************************************************************************************
 var vector1 = [1,2];
 var vector2 = [4,7];
 var vector3 = [-3,-9];
@@ -249,9 +320,31 @@ var vectors = [
     vector50
 ];
 
+function getVector() {
+	return vectors;
+}
+
+function getVectorLength() {
+	return vectors.length;
+}
+
+// ***************************************************************************************************************
 var stats = [10, 13, 12, 17, 56, 36, 29, 14, 10, 24, 110, 28, 17, 8, 30, 9, 47, 35, 29, 14, 56, 14, 11,
             46, 11, 23, 65, 26, 69, 61, 94, 10, 18, 9, 10, 28, 31, 26, 29, 31, 16];
-			
+	
+function getStats(statsPos){
+  return stats[statsPos];
+}
+
+function getStatsLen(){
+  return stats.length;
+}
+
+function gerStatsList() {
+	return stats;
+}
+
+// ***************************************************************************************************************	
 var phoneNumbersArr = ["415-222-3373" , "415-222-3733" ,"415-222-3033" ,"415-522-3143" ,"415-122-7833" ,
 "415-252-3333" ,"415-522-3333" ,"415-222-3373" ,"415-222-3883" ,"415-222-3353" ,"415-222-3313" ,"415-222-3378" ,
 "415-212-3373" ,"415-222-3393" ,"415-202-3333" ,"415-222-3333" ,"415-000-8933" ,"415-222-4474" ,"415-100-7785" ,
@@ -269,6 +362,22 @@ var namesArr = [
 			
 var phoneBook = [phoneNumbersArr,  namesArr];
 
+function getNameAtIndex(index)
+{
+	return namesArr[index];
+}
+
+function getPhoneAtIndex(index)
+{
+	return phoneNumbersArr[index];
+}
+
+function getNameLength() {
+	return phoneNumbersArr.length;
+}
+
+// ***************************************************************************************************************
+
  var textFile = ["Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus", 
                 " mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim jus", 
                 "to, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend ", 
@@ -277,6 +386,8 @@ var phoneBook = [phoneNumbersArr,  namesArr];
                 "uam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut ", 
                 "libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget", 
                 " bibendum sodales, augue velit cursus nunc,"];
+				
+// ***************************************************************************************************************				
 
 // MTP Process2
 
@@ -298,17 +409,17 @@ for (var i = 0, characterCounts = new Array(128); i < 128;) characterCounts[i++]
 
 var available = true;				
 
+// ***************************************************************************************************************
 				
 var file1 = { 
-	name: "bankAccount.js" , owner: "Jagat", time: "02/15/2016", access: "r-xr-xr-x", file: acctTrans
+	name: "bankAccount.js" , owner: "Jagat", time: "02/15/2016", access: "r-xr-xr-x", file: acctTrans, type: "file"
 };
 
 var file2 = { 
-	name: "contactManager.js" , owner: "Mansi", time: "02/15/2016", access: "r-xr-xr-x", file: contacts
+	name: "contactManager.js" , owner: "Mansi", time: "02/15/2016", access: "r-xr-xr-x", file: contacts, type: "file"
 };
-
 var file3 = { 
-	name: "securityFile.js" , owner: "Yongcai", time: "02/15/2016", access: "r-xr-xr-x", file: securityList
+	name: "securityFile.js" , owner: "Yongcai", time: "02/15/2016", access: "r-xr-xr-x", file: securityList, type: "file"
 };
 
 /*
@@ -318,20 +429,35 @@ name: "findRoutes.js" , owner: "Mayank", time: "02/15/2016", access: "r-xr-xr-x"
 */
 
 var file5 = { 
-	name: "calculateVectors.js" , owner: "Tony", time: "02/15/2016", access: "r-xr-xr-x", file: vectors
+	name: "calculateVectors.js" , owner: "Tony", time: "02/15/2016", access: "r-xr-xr-x", file: vectors, type: "file"
 };
 
 var file6 = { 
-	name: "calculateStats.js" , owner: "Nimitha", time: "02/15/2016", access: "r-xr-xr-x", file: stats
+	name: "calculateStats.js" , owner: "Nimitha", time: "02/15/2016", access: "r-xr-xr-x", file: stats,type: "file"
 };
 
 var file7 = { 
-	name: "phoneBook.js" , owner: "Asaf", time: "02/15/2016", access: "r-xr-xr-x", file: phoneBook
+	name: "phoneBook.js" , owner: "Asaf", time: "02/15/2016", access: "r-xr-xr-x", file: phoneBook, type: "file"
 };
 
 var file8 = { 
-	name: "characterCounter.js" , owner: "Yongcai", time: "04/11/2016", access: "r-xr-xr-x", file: characterCounts
+	name: "characterCounter.js" , owner: "Yongcai", time: "04/11/2016", access: "r-xr-xr-x", file: characterCounts, type: "file"
 };
 
-var directories = [ file1, file2, file3, file5, file6, file7, file8];
 
+
+var jagatFolder = {name: "Jagatdeep" , owner: "Jagatdeep", time: "04/11/2016", access: "r--r--r--", type: "folder", file: file1};
+
+var nimithaFolder = {name: "Nimitha" , owner: "Nimitha", time: "04/11/2016", access: "r--r--r--", type: "folder", file: file6};
+
+var yongcaiFolder = {name: "Yongcai" , owner: "Yongcai", time: "04/11/2016", access: "r--r--r--", type: "folder", file: file3};
+
+var mansiFolder = {name: "Mansi" , owner: "Mansi", time: "04/11/2016", access: "r--r--r--", type: "folder", file: file2};
+
+var tonyFolder = {name: "Tony" , owner: "Tony", time: "04/11/2016", access: "r--r--r--", type: "folder", file: file5};
+
+var asafFolder = {name: "Asaf" , owner: "Asaf", time: "04/11/2016", access: "r--r--r--", type: "folder", file: file7};
+
+var directories = [ jagatFolder, mansiFolder, yongcaiFolder, tonyFolder, nimithaFolder, asafFolder, file8];
+
+// ***************************************************************************************************************
