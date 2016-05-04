@@ -16,7 +16,7 @@ Step 2:
 
 Step 3:
 
-* Type in the command that you want to test.
+* Type in the command that you want to test [OR] type in the name of the process you want to run
 
 *****What's new****
 
@@ -27,11 +27,19 @@ It returns a memory error when a 100 MB limit is reached.
 Includes a process that copies a file over and over again.
 
 
-*****NEW COMMAND*****
+*****NEW COMMANDS*****
 
 dir
 
 // returns the amount of disk space available
+
+cd FolderName
+
+// navigates to the child folder specified
+
+cd ..
+
+// navigates to the parent folder
 
 
 *****OTHER COMMANDS*****
