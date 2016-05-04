@@ -4,7 +4,7 @@ RUNNING INSTRUCTIONS:
 
 Step 1:
 
- * Download the entire folder "final_project4 v3" to your local disk.
+ * Download the entire folder "final_project5 v3" to your local disk.
 
 Step 2:
 
@@ -18,13 +18,23 @@ Step 3:
 
 * Type in the command that you want to test.
 
-*****New Process****
+*****What's new****
 
-The new process added to Project 4 is characterCounter.js. 
+This project now implements directory structures.
 
-This process simulates a multithreaded environment. Multiple threads read from the same file and update a single shared array of character counts. The process uses Mutex locks to avoid a race condition.
+It returns a memory error when a 100 MB limit is reached. 
 
-*****COMMANDS*****
+Includes a process that copies a file over and over again.
+
+
+*****NEW COMMAND*****
+
+dir
+
+// returns the amount of disk space available
+
+
+*****OTHER COMMANDS*****
 
 cat FileName
 
