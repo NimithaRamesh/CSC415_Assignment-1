@@ -18,7 +18,8 @@ Step 3:
 
 * Type in the command that you want to test [OR] type in the name of the process you want to run
 
-*****What's new****
+
+WHAT'S NEW:
 
 This project now implements directory structures.
 
@@ -27,7 +28,7 @@ It returns a memory error when a 100 MB limit is reached.
 Includes a process that copies a file over and over again.
 
 
-*****NEW COMMANDS*****
+NEW COMMANDS:
 
 dir
 
@@ -42,7 +43,7 @@ cd ..
 // navigates to the parent folder
 
 
-*****OTHER COMMANDS*****
+OTHER COMMANDS:
 
 cat FileName
 
