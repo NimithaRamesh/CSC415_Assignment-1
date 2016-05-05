@@ -444,19 +444,25 @@ var file8 = {
 	name: "characterCounter.js" , owner: "Yongcai", time: "04/11/2016", access: "r-xr-xr-x", file: characterCounts, type: "file"
 };
 
+var jDir = [ file1 ];
+var mDir = [ file2 ];
+var yDir = [ file3, file8];
+var tDir = [ file5 ];
+var nDir = [ file6 ];
+var aDir = [ file7 ];
 
 
-var jagatFolder = {name: "Jagatdeep" , owner: "Jagatdeep", time: "04/11/2016", access: "r--r--r--", type: "folder", file: file1};
+var jagatFolder = {name: "Jagatdeep" , owner: "Jagatdeep", time: "04/11/2016", access: "r--r--r--", type: "folder", file: jDir};
 
-var nimithaFolder = {name: "Nimitha" , owner: "Nimitha", time: "04/11/2016", access: "r--r--r--", type: "folder", file: file6};
+var nimithaFolder = {name: "Nimitha" , owner: "Nimitha", time: "04/11/2016", access: "r--r--r--", type: "folder", file: mDir};
 
-var yongcaiFolder = {name: "Yongcai" , owner: "Yongcai", time: "04/11/2016", access: "r--r--r--", type: "folder", file: file3};
+var yongcaiFolder = {name: "Yongcai" , owner: "Yongcai", time: "04/11/2016", access: "r--r--r--", type: "folder", file: yDir};
 
-var mansiFolder = {name: "Mansi" , owner: "Mansi", time: "04/11/2016", access: "r--r--r--", type: "folder", file: file2};
+var mansiFolder = {name: "Mansi" , owner: "Mansi", time: "04/11/2016", access: "r--r--r--", type: "folder", file: tDir};
 
-var tonyFolder = {name: "Tony" , owner: "Tony", time: "04/11/2016", access: "r--r--r--", type: "folder", file: file5};
+var tonyFolder = {name: "Tony" , owner: "Tony", time: "04/11/2016", access: "r--r--r--", type: "folder", file: nDir};
 
-var asafFolder = {name: "Asaf" , owner: "Asaf", time: "04/11/2016", access: "r--r--r--", type: "folder", file: file7};
+var asafFolder = {name: "Asaf" , owner: "Asaf", time: "04/11/2016", access: "r--r--r--", type: "folder", file: aDir};
 
 var directories = [ jagatFolder, mansiFolder, yongcaiFolder, tonyFolder, nimithaFolder, asafFolder, file8];
 

@@ -32,10 +32,10 @@ function loadingOS() {
 		
 	}
 
-	setTimeout("loadingCompleted()", loadingCounter / 46);
+	setTimeout("loadingCompleted()", loadingCounter / 45);
 	
 	if (loadindex < loadingDevice.length - 1) {		
-		setTimeout("loadingOS()", loadingCounter / 46);
+		setTimeout("loadingOS()", loadingCounter / 45);
 	}
 }
 
@@ -62,7 +62,7 @@ function loadingCompleted() {
 	}
 }
 
-initd();
+//initd();
 
 /*
 IOdevice

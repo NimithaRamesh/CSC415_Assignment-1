@@ -219,6 +219,7 @@ function commandCall(input) {
 	switch(input[0]) {
 		
 		case 'ls':
+		/*
 			var currentDir = getCurrDir();
 
 			if (dirIndex == -1) {
@@ -226,6 +227,9 @@ function commandCall(input) {
 			} else {
 				ls(currentDir);
 			}
+			*/
+			ls();
+			
 		break;
 		
 		case 'more':
