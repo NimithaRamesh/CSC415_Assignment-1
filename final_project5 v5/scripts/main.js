@@ -195,7 +195,7 @@ var a5p4 = 1;
 
 function copyOver(file_space) {
 	
-	var copy_input = [" ", "bankAccount.js", "CopyFile"];
+	var copy_input = [" ", "contactManager.js", "CopyFile"];
 	
 	if(spaceRequest(a5p4))
 	{
@@ -209,12 +209,14 @@ function copyOver(file_space) {
 				if (!checkSpace(file_space))
 				{
 					console.log ("Sorry, not enough space!");
+					document.getElementById("displaydevice").innerHTML  += "<br>Sorry, not enough space!";
 					break;
 				}				
 			}
 			else 
 			{
 				console.log ("Sorry, not enough space!");
+				document.getElementById("displaydevice").innerHTML  += "<br>Sorry, not enough space!";
 			}	
 		}
 		releaseSpace(a5p4);	
@@ -222,6 +224,7 @@ function copyOver(file_space) {
 	else 
 	{
 		console.log ("Sorry, not enough space!");
+		document.getElementById("displaydevice").innerHTML  += "<br>Sorry, not enough space!";
 	}
 	
 }

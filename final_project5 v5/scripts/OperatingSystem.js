@@ -171,7 +171,23 @@ function runProcess(processCase) {
 				}	
 			}
 		break;
-	
+		/*
+		case 8:
+			if ((getState(8)) != "Completed" && (getState(8)) != "stop")
+			{
+				changeState(8);
+				
+				//process2CallMTP();
+				copyOver(5);
+				
+				if (eofMTP == true) {
+					CompleteProcess(8);
+		
+					newLineReset();					
+				}	
+			}
+		break;
+	*/
 		default: //Error
 		break;
 	}
@@ -219,17 +235,7 @@ function commandCall(input) {
 	switch(input[0]) {
 		
 		case 'ls':
-		/*
-			var currentDir = getCurrDir();
-
-			if (dirIndex == -1) {
-				ls(currentDir[0]);
-			} else {
-				ls(currentDir);
-			}
-			*/
-			ls();
-			
+			ls();			
 		break;
 		
 		case 'more':
@@ -275,6 +281,16 @@ function commandCall(input) {
 		case 'cd':
 			cd(input);
 		break;
+		
+		case 'copyOver.js':
+			if (dirIndex == 1) {
+				copyOver(5);
+			} else {
+				
+			}
+			
+		break;
+		
 		
 		case 'test.js':
                 //initd();
@@ -337,6 +353,13 @@ function processesCall(input) {
 			setState(7, "Ready");
 			psList.push(psHashMap[7]);
 		break;
+		/*
+		case 'copyOver.js':
+			//setState(8, "Ready");
+			//psList.push(psHashMap[8]);
+		break;
+		
+		*/
 		/*
 		case 'test.js':
 			//testcase();

@@ -11,6 +11,7 @@ commandHashMap["copy"]= "copy";
 commandHashMap["delete"]= "delete";
 commandHashMap["dir"]= "dir";
 commandHashMap["cd"] = "cd";
+commandHashMap["copyOver.js"] = "copy a file over and over again";
 commandHashMap["test.js"]= "Test case";
 
 var ignoreKeys = {};
@@ -288,22 +289,23 @@ function getKey(input) {
 
 function copy(input) {
 
-	var new_file = {name: "" , owner: "", time: "", access: "", file: null}
-	
-	if(filesMap.hasOwnProperty(input[1])) {
-		for (var i = 0; i < directories.length; i++ ) {
-			if(directories[i].name == input[1]) { 
+	var new_file = {name: "" , owner: "", time: "", access: "", file: null, type: ""}
+	//var currentDir = getCurrDir();
+	if(currentDir[1].hasOwnProperty(input[1])) {
+		for (var i = 0; i < currentDir[0].file.length; i++ ) {
+			if(currentDir[0].file[i].name == input[1]) { 
 				new_file.name = input[2];
-				new_file.owner = directories[i].owner;
-				new_file.time = directories[i].time;
-				new_file.access = directories[i].access;
-				new_file.file = directories[i].file;
+				new_file.owner = currentDir[0].file[i].owner;
+				new_file.time = currentDir[0].file[i].time;
+				new_file.access = currentDir[0].file[i].access;
+				new_file.file = currentDir[0].file[i].file;
+				new_file.type = currentDir[0].file[i].type;
 				
-				directories[directories.length] = new_file;
+				currentDir[0].file[currentDir[0].file.length] = new_file;
 				
-				directories[directories.length - 1].name = input[2];
+				currentDir[0].file[currentDir[0].file.length - 1].name = input[2];
 
-				filesMap[input[2]]= input[2];
+				currentDir[1][input[2]]= input[2];
 				
 				break;
 			}
