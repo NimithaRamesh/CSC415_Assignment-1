@@ -28,7 +28,7 @@ It returns a memory error when a 100 MB limit is reached.
 Includes a process that copies a file over and over again.
 
 
-NEW COMMANDS:
+COMMANDS:
 
 dir
 
