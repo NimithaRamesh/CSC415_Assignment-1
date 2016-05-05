@@ -15,6 +15,7 @@ jagatHashMap["bankAccount.js"] = "Bank Account";
 
 var mansiHashMap = {};
 mansiHashMap["contactManager.js"] = "Contact Manager";
+mansiHashMap["copyOver.js"] = "Copy Over";
 
 var yongcaiHashMap = {};
 yongcaiHashMap["securityFile.js"] = "Security File";
@@ -40,6 +41,7 @@ psHashMap[4]= "calculateVectors.js";
 psHashMap[5]= "calculateStats.js";
 psHashMap[6]= "phoneBook.js";
 psHashMap[7]= "characterCounter.js";
+psHashMap[8]= "copyOver.js";
 
 
 // ***************************************************************************************************************
@@ -444,9 +446,11 @@ var file8 = {
 	name: "characterCounter.js" , owner: "Yongcai", time: "04/11/2016", access: "r-xr-xr-x", file: characterCounts, type: "file"
 };
 
+var file9 = { name: "copyOver.js" , owner: "Mansi", time: "04/27/2016", access: "--x--x--x", file: null , type: "file" };
+
 var jDir = [ file1 ];
-var mDir = [ file2 ];
-var yDir = [ file3, file8];
+var mDir = [ file2, file9 ];
+var yDir = [ file3, file8 ];
 var tDir = [ file5 ];
 var nDir = [ file6 ];
 var aDir = [ file7 ];
@@ -454,13 +458,13 @@ var aDir = [ file7 ];
 
 var jagatFolder = {name: "Jagatdeep" , owner: "Jagatdeep", time: "04/11/2016", access: "r--r--r--", type: "folder", file: jDir};
 
-var nimithaFolder = {name: "Nimitha" , owner: "Nimitha", time: "04/11/2016", access: "r--r--r--", type: "folder", file: mDir};
+var mansiFolder = {name: "Mansi" , owner: "Mansi", time: "04/11/2016", access: "r--r--r--", type: "folder", file: mDir};
 
 var yongcaiFolder = {name: "Yongcai" , owner: "Yongcai", time: "04/11/2016", access: "r--r--r--", type: "folder", file: yDir};
 
-var mansiFolder = {name: "Mansi" , owner: "Mansi", time: "04/11/2016", access: "r--r--r--", type: "folder", file: tDir};
+var tonyFolder = {name: "Tony" , owner: "Tony", time: "04/11/2016", access: "r--r--r--", type: "folder", file: tDir};
 
-var tonyFolder = {name: "Tony" , owner: "Tony", time: "04/11/2016", access: "r--r--r--", type: "folder", file: nDir};
+var nimithaFolder = {name: "Nimitha" , owner: "Nimitha", time: "04/11/2016", access: "r--r--r--", type: "folder", file: nDir};
 
 var asafFolder = {name: "Asaf" , owner: "Asaf", time: "04/11/2016", access: "r--r--r--", type: "folder", file: aDir};
 
