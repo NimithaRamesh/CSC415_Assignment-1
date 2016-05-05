@@ -10,7 +10,7 @@ var keyBDtemp2 = "";
 var startLineCounter = 12;
 var startLineIndex = 12;
 var cDirectory = "";
-var keyBDflag1 = false;
+var keyBDflag1 = true;
 
 function getkeyString(e) {
 // if (flag == 1)

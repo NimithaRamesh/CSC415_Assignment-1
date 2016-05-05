@@ -40,6 +40,7 @@ manPages["dir"]= "Return the amount of avaiable drive space";
 manPages["cd"] = "Change working directory to desired directory.";
 
 var dirIndex = -1; 
+var currentDir = getCurrDir();
 
 function parseString(inputString) {
 	
@@ -49,7 +50,7 @@ function parseString(inputString) {
 		//it is a command
 		commandCall(input);	
 	} else {
-		if (filesMap.hasOwnProperty(input[0])) { // check if the file is on our list.
+		if (currentDir[1].hasOwnProperty(input[0])) { // check if the file is on our list.
 			processesCall(input);
 		} else {
 			// file not found
@@ -71,9 +72,8 @@ function ls() {
 	}
 }
 */
-function ls(currLoc) {
-
-	var x = 0;
+function ls() {
+	
 	/*
 	console.log("index : " + dirIndex);
 	console.log("curr : " + currLoc);
@@ -84,36 +84,35 @@ function ls(currLoc) {
 	*/
 	if (dirIndex != -1) 
 	{
-		x = 1;
-		for(var i = 0; i < currLoc.length - x; i++) 
+		for(var i = 0; i < currentDir[0].file.length; i++) 
 		{	
 			document.getElementById("displaydevice").innerHTML  += "<br>" 
-			+ currLoc[i].file.access 
+			+ currentDir[0].file[i].access 
 			+ "&nbsp&nbsp&nbsp&nbsp"
-			+ currLoc[i].file.owner
+			+ currentDir[0].file[i].owner
 			+ "&nbsp&nbsp&nbsp&nbsp" 
-			+ currLoc[i].file.type
+			+ currentDir[0].file[i].type
 			+ "&nbsp&nbsp&nbsp&nbsp"
-			+ currLoc[i].file.time 
+			+ currentDir[0].file[i].time 
 			+ "&nbsp&nbsp&nbsp&nbsp" 
-			+ currLoc[i].file.name + "";
+			+ currentDir[0].file[i].name + "";
 		}
 	}
 	else
 	{
 		//console.log("ddddddddddd : " + dirIndex);
-		for(var i = 0; i < currLoc.length - x; i++) 
+		for(var i = 0; i < currentDir[0].length; i++) 
 		{	
 			document.getElementById("displaydevice").innerHTML  += "<br>" 
-			+ currLoc[i].access 
+			+ currentDir[0][i].access 
 			+ "&nbsp&nbsp&nbsp&nbsp"
-			+ currLoc[i].owner
+			+ currentDir[0][i].owner
 			+ "&nbsp&nbsp&nbsp&nbsp" 
-			+ currLoc[i].type
+			+ currentDir[0][i].type
 			+ "&nbsp&nbsp&nbsp&nbsp"
-			+ currLoc[i].time 
+			+ currentDir[0][i].time 
 			+ "&nbsp&nbsp&nbsp&nbsp" 
-			+ currLoc[i].name + "";
+			+ currentDir[0][i].name + "";
 		}
 	}
 }
@@ -121,7 +120,7 @@ function ls(currLoc) {
 function getCurrDir()
 {
 	var jMap = [jagatFolder, jagatHashMap];
-	var mMap=[mansiFolder, mansiHashMap];
+	var mMap= [mansiFolder, mansiHashMap];
 	var yMap = [yongcaiFolder, yongcaiHashMap];
 	var tMap = [tonyFolder, tonyHashMap];
 	var nMap = [nimithaFolder, nimithaHashMap];
@@ -163,6 +162,7 @@ function cd(destination)
 		{
 			dirIndex = -1;
 			cDirectory = "";
+			currentDir = getCurrDir();
 		}
 		else
 		{
@@ -178,6 +178,7 @@ function cd(destination)
 		 	{
 		 		dirIndex = i;
 				cDirectory = "\\" + destination[1];
+				currentDir = getCurrDir();
 				break;
 		 	}
 		}
@@ -202,8 +203,26 @@ function man(command) {
 		document.getElementById("displaydevice").innerHTML  += "<br>No such Command.";
 	}
 }
+/*
+function cat(input) {
+	
+	if(filesMap.hasOwnProperty(input)) {
+		for (var i = 0; i < Object.keys(filesMap).length; i++) {
+			if(directories[i].name == input) {
+				document.getElementById("displaydevice").innerHTML  += "<br>" + directories[i].file;		
+				break;
+			}
+		}
+	} else {
+		document.getElementById("displaydevice").innerHTML  += "<br>Error. File not found.<br>";
+	}
+}
+*/
+
 
 function cat(input) {
+	
+	//var currentDir = getCurrDir();
 	
 	if(filesMap.hasOwnProperty(input)) {
 		for (var i = 0; i < Object.keys(filesMap).length; i++) {
