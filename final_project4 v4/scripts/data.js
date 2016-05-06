@@ -7,6 +7,7 @@ filesMap["calculateVectors.js"]= "Calculate Vectors";
 filesMap["calculateStats.js"]= "Calculate Stats";
 filesMap["phoneBook.js"]= "Phone Book";
 filesMap["characterCounter.js"]= "character Counter";
+filesMap["dijkstra.js"]= "Dijkstra's dining philosophers";
 filesMap["test.js"]= "test case";
 
 var psHashMap = {};
@@ -333,5 +334,9 @@ var file8 = {
 	name: "characterCounter.js" , owner: "Yongcai", time: "04/11/2016", access: "r-xr-xr-x", file: characterCounts
 };
 
-var directories = [ file1, file2, file3, file5, file6, file7, file8];
+var file9 = { 
+	name: "dijkstra.js" , owner: "Tony", time: "05/05/2016", access: "--x--x--x", file: null
+};
+
+var directories = [ file1, file2, file3, file5, file6, file7, file8, file9];
 

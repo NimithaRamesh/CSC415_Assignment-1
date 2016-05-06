@@ -311,8 +311,13 @@ function processesCall(input) {
 			psList.push(psHashMap[7]);
 		break;
 		
-		case 'test.js':
+		case 'dijkstra.js':
+			initialT = new Date;
+			diningPhilosophers2();
+		break;
 		
+		case 'test.js':
+			//diningPhilosophers2();
 		break;
 		
 		default: // Error
