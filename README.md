@@ -4,7 +4,7 @@ RUNNING INSTRUCTIONS:
 
 Step 1:
 
- * Download the entire folder "final_project4 v3" to your local disk.
+ * Download the entire folder "final_project4 v4" to your local disk.
 
 Step 2:
 
@@ -20,9 +20,13 @@ Step 3:
 
 *****New Process****
 
-The new process added to Project 4 is characterCounter.js. 
+The new process added to Project 4 are:
+- characterCounter.js
+- dijkstra.js
 
 This process simulates a multithreaded environment. Multiple threads read from the same file and update a single shared array of character counts. The process uses Mutex locks to avoid a race condition.
+
+To run and test a process, type their name. For example: characterCountr.js [Enter]
 
 *****COMMANDS*****
 
