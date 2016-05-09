@@ -62,7 +62,7 @@ function loadingCompleted() {
 	}
 }
 
-//initd();
+initd();
 
 /*
 IOdevice
