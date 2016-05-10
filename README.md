@@ -4,7 +4,7 @@ RUNNING INSTRUCTIONS:
 
 Step 1:
 
- * Download the entire folder "final_project5 v5" to your local disk.
+ * Download the entire folder "final_project6 v*" to your local disk.
 
 Step 2:
 
