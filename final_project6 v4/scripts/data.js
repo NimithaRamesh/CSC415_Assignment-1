@@ -1,41 +1,11 @@
-// main directories
-var filesMap = {};
-filesMap["jagatFolder"]= "Bank Account";
-filesMap["mansiFolder"]= "Contact Manager";
-filesMap["yongcaiFolder"]= "Security File";
-//filesMap["findRoutes.js"]= "Find Routes";
-filesMap["tonyFolder"]= "Calculate Vectors";
-filesMap["nimithaFolder"]= "Calculate Stats";
-filesMap["asafFolder"]= "Phone Book";
-filesMap["characterCounter.js"]= "character Counter";
-//filesMap["test.js"]= "test case";
 
-var jagatHashMap = {};
-jagatHashMap["bankAccount.js"] = "Bank Account";
-
-var mansiHashMap = {};
-mansiHashMap["contactManager.js"] = "Contact Manager";
-mansiHashMap["copyOver.js"] = "Copy Over";
-
-var yongcaiHashMap = {};
-yongcaiHashMap["securityFile.js"] = "Security File";
-yongcaiHashMap["characterCounter.js"] = " character Counter";
-
-var tonyHashMap = {};
-tonyHashMap["calculateVectors.js"] = "Calculate Vectors";
-
-var nimithaHashMap = {};
-nimithaHashMap["calculateStats.js"] = "Calculate Stats";
-
-var asafHashMap = {};
-asafHashMap["phoneBook.js"] = "Phone Book";
 
 //*************************************************************************************************************
 
 var psHashMap = {};
 psHashMap[0]= "bankAccount.js";
 psHashMap[1]= "contactManager.js";
-psHashMap[2]= "securityFile.js";
+psHashMap[2]= "securityFDir.js";
 psHashMap[3]= "findRoutes.js";
 psHashMap[4]= "calculateVectors.js";
 psHashMap[5]= "calculateStats.js";
@@ -421,7 +391,7 @@ var file2 = {
 	name: "contactManager.js" , owner: "Mansi", time: "02/15/2016", access: "r-xr-xr-x", file: contacts, type: "file"
 };
 var file3 = { 
-	name: "securityFile.js" , owner: "Yongcai", time: "02/15/2016", access: "r-xr-xr-x", file: securityList, type: "file"
+	name: "securityFDir.js" , owner: "Yongcai", time: "02/15/2016", access: "r-xr-xr-x", file: securityList, type: "file"
 };
 
 /*
@@ -448,26 +418,197 @@ var file8 = {
 
 var file9 = { name: "copyOver.js" , owner: "Mansi", time: "04/27/2016", access: "--x--x--x", file: null , type: "file" };
 
-var jDir = [ file1 ];
-var mDir = [ file2, file9 ];
-var yDir = [ file3, file8 ];
-var tDir = [ file5 ];
-var nDir = [ file6 ];
-var aDir = [ file7 ];
+var file10 = { name: "dijkstra.js" , owner: "Tony", time: "05/05/2016", access: "--x--x--x", file: null, type: "file" };
+
+var jFDir = [ file1 ];
+var mFDir = [ file2, file9 ];
+var yFDir = [ file3, file8 ];
+var tFDir = [ file5 ];
+var nFDir = [ file6 ];
+var aFDir = [ file7 ];
+
+// ########################################################################################################
+// HASH MAP
+ 
+//  users hash map
+var usersHashMap = {};
+usersHashMap["jagatFolder"]= "Bank Account";
+usersHashMap["mansiFolder"]= "Contact Manager";
+usersHashMap["yongcaiFolder"]= "Security File";
+//usersHashMap["findRoutes.js"]= "Find Routes";
+usersHashMap["tonyFolder"]= "Calculate Vectors";
+usersHashMap["nimithaFolder"]= "Calculate Stats";
+usersHashMap["asafFolder"]= "Phone Book";
+//usersHashMap["dijkstra.js"]= "Dijkstra's dining philosophers";
+//usersHashMap["characterCounter.js"]= "character Counter";
+//usersHashMap["test.js"]= "test case";
 
 
-var jagatFolder = {name: "Jagatdeep" , owner: "Jagatdeep", time: "04/11/2016", access: "r--r--r--", type: "folder", file: jDir};
+// os folder hash map
+var osHashMap = {};
 
-var mansiFolder = {name: "Mansi" , owner: "Mansi", time: "04/11/2016", access: "r--r--r--", type: "folder", file: mDir};
+// main folder hash map
 
-var yongcaiFolder = {name: "Yongcai" , owner: "Yongcai", time: "04/11/2016", access: "r--r--r--", type: "folder", file: yDir};
+var mainHashMap = {};
+mainHashMap["user"]= "user folder";
+mainHashMap["os"]= "os folder";
 
-var tonyFolder = {name: "Tony" , owner: "Tony", time: "04/11/2016", access: "r--r--r--", type: "folder", file: tDir};
+// individuals folder hash map
 
-var nimithaFolder = {name: "Nimitha" , owner: "Nimitha", time: "04/11/2016", access: "r--r--r--", type: "folder", file: nDir};
+var jagatHashMap = {};
+jagatHashMap["bankAccount.js"] = "Bank Account";
 
-var asafFolder = {name: "Asaf" , owner: "Asaf", time: "04/11/2016", access: "r--r--r--", type: "folder", file: aDir};
+var mansiHashMap = {};
+mansiHashMap["contactManager.js"] = "Contact Manager";
+mansiHashMap["copyOver.js"] = "Copy Over";
 
-var directories = [ jagatFolder, mansiFolder, yongcaiFolder, tonyFolder, nimithaFolder, asafFolder, file8];
+var yongcaiHashMap = {};
+yongcaiHashMap["securityFDir.js"] = "Security File";
+yongcaiHashMap["characterCounter.js"] = " character Counter";
+
+var tonyHashMap = {};
+tonyHashMap["calculateVectors.js"] = "Calculate Vectors";
+
+var nimithaHashMap = {};
+nimithaHashMap["calculateStats.js"] = "Calculate Stats";
+
+var asafHashMap = {};
+asafHashMap["phoneBook.js"] = "Phone Book";
+
+//*****************************************************************************************************************************************************
+
+var jMap = [];
+var mMap = [];
+var yMap = [];
+var tMap = [];
+var nMap = [];
+var aMap = [];
+var uMap = [];
+var oMap =[];
+var mainMap = [];
+
+var jagatFolder = {name: "Jagatdeep" , owner: "Jagatdeep", time: "04/11/2016", access: "r--r--r--", type: "folder", file: jFDir, hashMap: jagatHashMap, parentF: uMap};
+
+var mansiFolder = {name: "Mansi" , owner: "Mansi", time: "04/11/2016", access: "r--r--r--", type: "folder", file: mFDir, hashMap: mansiHashMap, parentF: uMap};
+
+var yongcaiFolder = {name: "Yongcai" , owner: "Yongcai", time: "04/11/2016", access: "r--r--r--", type: "folder", file: yFDir, hashMap: yongcaiHashMap, parentF: uMap};
+
+var tonyFolder = {name: "Tony" , owner: "Tony", time: "04/11/2016", access: "r--r--r--", type: "folder", file: tFDir, hashMap: tonyHashMap, parentF: uMap};
+
+var nimithaFolder = {name: "Nimitha" , owner: "Nimitha", time: "04/11/2016", access: "r--r--r--", type: "folder", file: nFDir, hashMap: nimithaHashMap, parentF: uMap};
+
+var asafFolder = {name: "Asaf" , owner: "Asaf", time: "04/11/2016", access: "r--r--r--", type: "folder", file: aFDir, hashMap: asafHashMap, parentF: uMap};
+
+//var directories = [ jagatFolder, mansiFolder, yongcaiFolder, tonyFolder, nimithaFolder, asafFolder, file8, file10 ];
+var uFDir = [jagatFolder, mansiFolder, yongcaiFolder, tonyFolder, nimithaFolder, asafFolder];
+
+var usersFolder = {name: "user" , owner: "Yongcai", time: "05/08/2016", access: "r--r--r--", type: "folder", file: uFDir, hashMap: usersHashMap, parentF: mainMap};
+
+var oFDir = [];
+
+var osFolder = {name: "OperatingSystem" , owner: "Yongcai", time: "05/08/2016", access: "r--r--r--", type: "folder", file: oFDir, hashMap: osHashMap, parentF: mainMap};
+
+var mainFDir = [ usersFolder, osFolder ];
+
+var mainFolder = {name: "csc415" , owner: "Yongcai", time: "05/09/2016", access: "r--r--r--", type: "folder", file: mainFDir, hashMap: mainHashMap, parentF: "null"};
+
+ jMap = [jagatFolder, jagatHashMap];
+ mMap = [mansiFolder, mansiHashMap];
+ yMap = [yongcaiFolder, yongcaiHashMap];
+ tMap = [tonyFolder, tonyHashMap];
+ nMap = [nimithaFolder, nimithaHashMap];
+ aMap = [asafFolder, asafHashMap];
+ uMap = [usersFolder, usersHashMap];
+ oMap = [osFolder, osHashMap];
+ mainMap = [mainFolder, mainHashMap];
+ 
+jagatFolder.parentF = uMap;
+mansiFolder.parentF = uMap;
+yongcaiFolder.parentF = uMap;
+tonyFolder.parentF = uMap;
+nimithaFolder.parentF = uMap;
+asafFolder.parentF = uMap;
+osFolder.parentF = mainMap;
+usersFolder.parentF = mainMap;
 
 // ***************************************************************************************************************
+var arrayOfUsers = [
+["nimitha", "S28ecsCp" ],
+["tony", "12345678" ],
+["yongcai", "87654321" ],
+["mansi", "55443322" ],
+["mayank", "zero1234" ],
+["chihuahua", "jagatchi" ],
+["loloco", "aaaa1111" ],
+];
+
+var superUsers = [
+["admin", "admin123" ]
+];
+
+var currentUser = "";
+
+
+
+// ***************************************************************************************************************
+
+var checkFilesMap = {};
+checkFilesMap["bankAccount.js"] = "Executable: Yes | Everyone";
+checkFilesMap["contactManager.js"] = "Executable: Yes | Everyone";
+checkFilesMap["securityFile.js"] = "Executable: Yes | Everyone";
+checkFilesMap["calculateVectors.js"] = "Executable: Yes | Everyone";
+checkFilesMap["calculateStats.js"] = "Executable: Yes | Everyone";
+checkFilesMap["phoneBook.js"] = "Executable: Yes | Everyone";
+checkFilesMap["characterCounter.js"] = "Executable: Yes | Everyone";
+checkFilesMap["copyOver.js"] = "Executable: No";
+checkFilesMap["AccessibilityDefinitions.plist"] = "Executable: No";
+checkFilesMap["CloudKitAccessPlugin.bundle"] = "Executable: No";
+checkFilesMap["DefaultAccessPlugin.bundle"] = "Executable: No";
+checkFilesMap["FacebookAccessPlugin.bundle"] = "Executable: No";
+checkFilesMap["LinkedInAccessPlugin.bundle"] = "Executable: No";
+checkFilesMap["TencentWeiboAccessPlugin.bundle"] = "Executable: No";
+checkFilesMap["EmailAuthenticationPlugin.bundle"] = "Executable: No";
+checkFilesMap["CalendarAuthenticationPlugin.bundle"] = "Executable: No";
+checkFilesMap["ExchangeAuthenticationPlugin.bundle"] = "Executable: No";
+checkFilesMap["AppliIDSSOAuthenticationPlugin.bundle"] = "Executable: No";
+checkFilesMap["CloudKitAuthenticationPlugin.bundle"] = "Executable: No";
+checkFilesMap["ContactsAccountsAuthenticationPlugin.bundle"] = "Executable: No";
+checkFilesMap["EmailAuthenticationPlugin.bundle"] = "Executable: No";
+checkFilesMap["FacebookAuthenticationPlugin.bundle"] = "Executable: No";
+checkFilesMap["FlickrAuthenticationPlugin.bundle"] = "Executable: No";
+checkFilesMap["GoogleAuthenticationPlugin.bundle"] = "Executable: No";
+checkFilesMap["iCloudIDAuthenticationPlugin.bundle"] = "Executable: No";
+checkFilesMap["LinkedInAuthenticationPlugin.bundle"] = "Executable: No";
+checkFilesMap["ServerAuthenticationPlugin.bundle"] = "Executable: No";
+checkFilesMap["TencentWeiboAuthenticationPlugin.bundle"] = "Executable: No";
+checkFilesMap["TudouAuthenticationPlugin.bundle"] = "Executable: No";
+checkFilesMap["TwitterAuthenticationPlugin.bundle"] = "Executable: No";
+checkFilesMap["VimeoAuthenticationPlugin.bundle"] = "Executable: No";
+checkFilesMap["WeiboAuthenticationPlugin.bundle"] = "Executable: No";
+checkFilesMap["YahooAuthenticationPlugin.bundle"] = "Executable: No";
+checkFilesMap["YoukuAuthenticationPlugin.bundle"] = "Executable: No";
+checkFilesMap["Info.plist"] = "Executable: No";
+checkFilesMap["version.plist"] = "Executable: No";
+checkFilesMap["AOSKitNotificationPlugin.bundle"] = "Executable: No";
+checkFilesMap["AppleISSONotificationPlugin.bundle"] = "Executable: No";
+checkFilesMap["CalendarNotificationPlugin.bundle"] = "Executable: No";
+checkFilesMap["CloudDocsAccountNotificationPlugin.bundle"] = "Executable: No";
+checkFilesMap["CloudKitNotificationPlugin.bundle"] = "Executable: No";
+checkFilesMap["CLoudPhotosServicesNotificationPlugin.bundle"] = "Executable: No";
+checkFilesMap["ContactsAccountsNotificationPlugin.bundle"] = "Executable: No";
+checkFilesMap["EmailNotificationPlugin.bundle"] = "Executable: No";
+checkFilesMap["ExchangeNotificationPlugin.bundle"] = "Executable: No";
+checkFilesMap["iCloudIDNotificationPlugin.bundle"] = "Executable: No";
+checkFilesMap["InternetAccountNotificationPlugin.bundle"] = "Executable: No";
+checkFilesMap["MessagesAccountNotificationPlugin.bundle"] = "Executable: No";
+checkFilesMap["NotesAccountNotificationPlugin.bundle"] = "Executable: No";
+checkFilesMap["PCSAccountNotificationPlugin.bundle"] = "Executable: No";
+checkFilesMap["ServerNotificationPlugin.bundle"] = "Executable: No";
+checkFilesMap["ShareKitNotificationPlugin.bundle"] = "Executable: No";
+checkFilesMap["SPAANotificationPlugin.bundle"] = "Executable: No";
+checkFilesMap["test.java"] = "Executable: No";
+checkFilesMap["acfs.kext"] = "Executable: No";
+checkFilesMap["AFL.kext"] = "Executable: No";
+checkFilesMap["triggers.kext"] = "Executable: No";
+checkFilesMap["MRJToolkit.jar"] = "Executable: No";
+checkFilesMap["alaised.pm"] = "Executable: No";

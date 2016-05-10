@@ -286,17 +286,24 @@ function commandCall(input) {
 			if (dirIndex == 1) {
 				copyOver(5);
 			} else {
-				
-			}
 			
+			}
 		break;
-		
-		
+
 		case 'test.js':
                 //initd();
-				diningPhilosophers();
+				//diningPhilosophers();
+				testcase();
         break;
 		
+		case 'checkfile':
+			checkFile(input[1]);
+		break;
+
+		case 'printfiles':
+			printFiles();
+		break;
+			  
 		
 		default: // Error
 		
@@ -353,13 +360,10 @@ function processesCall(input) {
 			setState(7, "Ready");
 			psList.push(psHashMap[7]);
 		break;
-		/*
-		case 'copyOver.js':
-			//setState(8, "Ready");
-			//psList.push(psHashMap[8]);
+		case 'dijkstra.js':
+			initialT = new Date;
+			diningPhilosophers();
 		break;
-		
-		*/
 		/*
 		case 'test.js':
 			//testcase();
@@ -443,7 +447,8 @@ function getNameListLength(){
 //*********************************************************************
 
 function testcase() {
-	
 	console.log("Hello");
-	
+	console.log("Get the i value of the list" + arrayOfUsers[0]);
+	console.log("get the first element of the list, in this case username: " + arrayOfUsers[0][0]);
+	console.log("get the first element of the list, in this case passwork: " + arrayOfUsers[0][1]);
 }

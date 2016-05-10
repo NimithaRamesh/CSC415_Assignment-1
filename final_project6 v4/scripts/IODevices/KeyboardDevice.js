@@ -10,6 +10,7 @@ var keyBDtemp2 = "";
 var startLineCounter = 12;
 var startLineIndex = 12;
 var cDirectory = "";
+var cUser = "";
 var keyBDflag1 = false;
 
 function getkeyString(e) {
@@ -17,6 +18,7 @@ function getkeyString(e) {
 //     if (key == space)
 //        print next index
 // else 
+	
 	if(!ignoreKeys.hasOwnProperty(e)) { // this is for ignore special key
 		if (e != "Enter") {
 			if(e != "Backspace") {
@@ -61,7 +63,7 @@ function getkeyString(e) {
 
 function newLineReset() {
 	
-	document.getElementById("displaydevice").innerHTML  += "<br> C:\\csc415" + cDirectory + "> ";
+	document.getElementById("displaydevice").innerHTML  += "<br> C:\\csc415" + cUser + cDirectory + "> ";
 			
 	startLineIndex = document.getElementById("displaydevice").innerHTML.length;
 	//console.log("length: " + currentDir.length);
