@@ -28,7 +28,6 @@ ignoreKeys["ArrowDown"]= "ArrowDown";
 ignoreKeys["ArrowRight"]= "ArrowRight";
 ignoreKeys["ArrowUp"]= "ArrowLeft";
 ignoreKeys["CapsLock"]= "CapsLock";
-
 ignoreKeys["Meta"] = "Meta";
 
 var manPages = {};
@@ -45,7 +44,6 @@ manPages["delete"]= "Delete a file.";
 manPages["dir"]= "Return the amount of avaiable drive space";
 manPages["cd"] = "Change working directory to desired directory.";
 
-var dirIndex = -1; 
 var currentDir = [mainFolder, mainHashMap];
 var loginFlag1 = false;
 var loginFlagUN = false;
@@ -57,22 +55,19 @@ function parseString(inputString) {
 	
 	if (loginFlag1) {
 		if(commandHashMap.hasOwnProperty(input[0])) { // check if it is a command
-			//it is a command
 			commandCall(input);	
 		} else {
 			if (currentDir[1].hasOwnProperty(input[0])) { // check if the file is on our list.
 				processesCall(input);
 			} else {
-				// file not found
 				document.getElementById("displaydevice").innerHTML  += "<br>Error. Undectected command and/or file.<br>";
 			}
 		}
 	} else {
-		
 		if (loginFlagUN) {
 			if(checkPassword(input) == false) {
 				document.getElementById("displaydevice").innerHTML  += "<br>Error. Incorrect password.<br>";
-				loginFlagUN = false;
+				loginFlagUN = false;			
 			} else {
 				loginFlag1 = true;
 				keyBDflag1 = true;
@@ -82,16 +77,12 @@ function parseString(inputString) {
 				document.getElementById("displaydevice").innerHTML  += "<br>Error. Username not found.";
 			}
 		}
-		
 		if (loginFlag1 == false) {
 			login();
 		}
-		
 	}
-	
 }
 
-//login();
 
 function checkUsername(username) {
 	
@@ -99,12 +90,13 @@ function checkUsername(username) {
 		loginFlagUN = true;
 		currentUser = username; // the currentUser is now the super user
 		cUser = "\\" + username;	
-		//initd();
 		return true;
 	} else {
 		for (var i =0; i < arrayOfUsers.length; i++) {
 			if (username == arrayOfUsers[i][0]){
 				loginFlagUN = true;
+				currentUser = username; // the currentUser is now the super user
+				cUser = "\\" + username;
 				return true;			
 			}
 		}
@@ -112,16 +104,13 @@ function checkUsername(username) {
 	return false;
 }
 
-function checkPassword(password) {
-	if (password == superUsers[0][1]){
-	loginFlagPASS = true;
-	//currentUser = username; // the currentUser is now the super user
-	//cDirectory = "\\" + username;	
-	//initd();
-	return true;
+function checkPassword(passwordl) {
+	if (passwordl == superUsers[0][1]){
+		loginFlagPASS = true;
+		return true;
 	} else {
 		for (var i =0; i < arrayOfUsers.length; i++) {
-			if (password == arrayOfUsers[i][1]){
+			if (passwordl == arrayOfUsers[i][1]){
 				loginFlagPASS = true;
 				return true;			
 			}
@@ -155,30 +144,29 @@ function ls() {
 }
 
 function cd(destination) {
-
 	if (destination[1] == "..") {
 		if (currentDir[0].parentF == "null") {
 			document.getElementById("displaydevice").innerHTML  += "<br>Error. This is the root of the folder";
 		} else {
-			
 			if (currentDir[0].parentF[0].name != "csc415") {
 				cDirectory = "\\" + currentDir[0].parentF[0].name;
 			} else {
 				cDirectory = "";
 			}	
-
-			currentDir = currentDir[0].parentF;	
-			
+			currentDir = currentDir[0].parentF;			
 			return;
 		}
-	} else {
+	} else {	
+		if (destination[1] == "OperatingSystem") {
+			if (currentUser != superUsers[0][0]) {
+				//cdSearch(destination);
+				document.getElementById("displaydevice").innerHTML  += "<br>Error. Access denied";
+				return;
+			}
+		}	
 		for (var i = 0; i < currentDir[0].file.length; i++) {
-			if (currentDir[0].file[i].name == destination[1] && currentDir[0].file[i].type == "folder") {
-				
+			if (currentDir[0].file[i].name == destination[1] && currentDir[0].file[i].type == "folder") {			
 				cDirectory += "\\" + currentDir[0].file[i].name;
-				
-				//console.log(currentDir[0].file[i]);
-
 				currentDir = [currentDir[0].file[i], currentDir[0].file[i].hashMap];
 				return;
 			}
@@ -198,27 +186,8 @@ function man(command) {
 		document.getElementById("displaydevice").innerHTML  += "<br>No such Command.";
 	}
 }
-/*
-function cat(input) {
-	
-	if(usersHashMap.hasOwnProperty(input)) {
-		for (var i = 0; i < Object.keys(usersHashMap).length; i++) {
-			if(usersFolder[i].name == input) {
-				document.getElementById("displaydevice").innerHTML  += "<br>" + usersFolder[i].file;		
-				break;
-			}
-		}
-	} else {
-		document.getElementById("displaydevice").innerHTML  += "<br>Error. File not found.<br>";
-	}
-}
-*/
 
-
-function cat(input) {
-	
-	//var currentDir = getCurrDir();
-	
+function cat(input) {	
 	if(currentDir[1].hasOwnProperty(input)) {
 		for (var i = 0; i < Object.keys(usersHashMap).length; i++) {
 			if(currentDir[0].file[i].name == input) {
@@ -233,12 +202,10 @@ function cat(input) {
 
 function more(input) {
 	if(currentDir[1].hasOwnProperty(input)) {
-		// we have it here
 		cat(input);
 	} else {
 		/*
-		for (var i = 0; i < textFile.length; i++) {
-			
+		for (var i = 0; i < textFile.length; i++) {	
 		}
 		*/
 	}
@@ -253,9 +220,7 @@ function ps() {
 function kill(input) {
 	for (var i = 0; i < psList.length; i++) {
 		if(psList[i] == input) {
-
-			setState(getKey(input), "stop");
-			
+			setState(getKey(input), "stop");			
 			document.getElementById("displaydevice").innerHTML  += "<br>Process: " + input + " is stopped.";
 			
 			if (psList.length == 1 || psList[psList.length - 1] == input) {
@@ -284,25 +249,20 @@ function getKey(input) {
 function copy(input) {
 
 	var new_file = {name: "" , owner: "", time: "", access: "", type: "", file: null, hashMap: null, parentF: null}
-	//var currentDir = getCurrDir();
+	
 	if(currentDir[1].hasOwnProperty(input[1])) {
 		for (var i = 0; i < currentDir[0].file.length; i++ ) {
 			if(currentDir[0].file[i].name == input[1]) { 
 				new_file.name = input[2];
 				new_file.owner = currentDir[0].file[i].owner;
 				new_file.time = currentDir[0].file[i].time;
-				new_file.access = currentDir[0].file[i].access;
+				//new_file.access = currentDir[0].file[i].access;
+				new_file.access = "r--r--r--";
 				new_file.file = currentDir[0].file[i].file;
 				new_file.type = currentDir[0].file[i].type;
 				new_file.hashMap = currentDir[0].file[i].hashMap;
 				new_file.parentF = currentDir[0].file[i].parentF;
-				
 				currentDir[0].file[currentDir[0].file.length] = new_file;
-				
-				currentDir[0].file[currentDir[0].file.length - 1].name = input[2];
-
-				currentDir[1][input[2]]= input[2];
-				
 				break;
 			}
 		}

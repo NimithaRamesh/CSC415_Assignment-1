@@ -5,7 +5,7 @@
 var psHashMap = {};
 psHashMap[0]= "bankAccount.js";
 psHashMap[1]= "contactManager.js";
-psHashMap[2]= "securityFDir.js";
+psHashMap[2]= "securityFile.js";
 psHashMap[3]= "findRoutes.js";
 psHashMap[4]= "calculateVectors.js";
 psHashMap[5]= "calculateStats.js";
@@ -391,7 +391,7 @@ var file2 = {
 	name: "contactManager.js" , owner: "Mansi", time: "02/15/2016", access: "r-xr-xr-x", file: contacts, type: "file"
 };
 var file3 = { 
-	name: "securityFDir.js" , owner: "Yongcai", time: "02/15/2016", access: "r-xr-xr-x", file: securityList, type: "file"
+	name: "securityFile.js" , owner: "Yongcai", time: "02/15/2016", access: "r-xr-xr-x", file: securityList, type: "file"
 };
 
 /*
@@ -420,6 +420,8 @@ var file9 = { name: "copyOver.js" , owner: "Mansi", time: "04/27/2016", access: 
 
 var file10 = { name: "dijkstra.js" , owner: "Tony", time: "05/05/2016", access: "--x--x--x", file: null, type: "file" };
 
+var file100 = { name: "IOdevice.js" , owner: "admin", time: "03/02/2016", access: "---------", file: null, type: "file" };
+
 var jFDir = [ file1 ];
 var mFDir = [ file2, file9 ];
 var yFDir = [ file3, file8 ];
@@ -439,14 +441,12 @@ usersHashMap["yongcaiFolder"]= "Security File";
 usersHashMap["tonyFolder"]= "Calculate Vectors";
 usersHashMap["nimithaFolder"]= "Calculate Stats";
 usersHashMap["asafFolder"]= "Phone Book";
-//usersHashMap["dijkstra.js"]= "Dijkstra's dining philosophers";
-//usersHashMap["characterCounter.js"]= "character Counter";
+usersHashMap["dijkstra.js"]= "Dijkstra's dining philosophers";
 //usersHashMap["test.js"]= "test case";
-
 
 // os folder hash map
 var osHashMap = {};
-
+osHashMap["IOdevice.js"]= "IO decive file";
 // main folder hash map
 
 var mainHashMap = {};
@@ -463,7 +463,7 @@ mansiHashMap["contactManager.js"] = "Contact Manager";
 mansiHashMap["copyOver.js"] = "Copy Over";
 
 var yongcaiHashMap = {};
-yongcaiHashMap["securityFDir.js"] = "Security File";
+yongcaiHashMap["securityFile.js"] = "Security File";
 yongcaiHashMap["characterCounter.js"] = " character Counter";
 
 var tonyHashMap = {};
@@ -500,17 +500,17 @@ var nimithaFolder = {name: "Nimitha" , owner: "Nimitha", time: "04/11/2016", acc
 var asafFolder = {name: "Asaf" , owner: "Asaf", time: "04/11/2016", access: "r--r--r--", type: "folder", file: aFDir, hashMap: asafHashMap, parentF: uMap};
 
 //var directories = [ jagatFolder, mansiFolder, yongcaiFolder, tonyFolder, nimithaFolder, asafFolder, file8, file10 ];
-var uFDir = [jagatFolder, mansiFolder, yongcaiFolder, tonyFolder, nimithaFolder, asafFolder];
+var uFDir = [jagatFolder, mansiFolder, yongcaiFolder, tonyFolder, nimithaFolder, asafFolder, file10];
 
 var usersFolder = {name: "user" , owner: "Yongcai", time: "05/08/2016", access: "r--r--r--", type: "folder", file: uFDir, hashMap: usersHashMap, parentF: mainMap};
 
-var oFDir = [];
+var oFDir = [file100];
 
-var osFolder = {name: "OperatingSystem" , owner: "Yongcai", time: "05/08/2016", access: "r--r--r--", type: "folder", file: oFDir, hashMap: osHashMap, parentF: mainMap};
+var osFolder = {name: "OperatingSystem" , owner: "Yongcai", time: "05/08/2016", access: "r--------", type: "folder", file: oFDir, hashMap: osHashMap, parentF: mainMap};
 
 var mainFDir = [ usersFolder, osFolder ];
 
-var mainFolder = {name: "csc415" , owner: "Yongcai", time: "05/09/2016", access: "r--r--r--", type: "folder", file: mainFDir, hashMap: mainHashMap, parentF: "null"};
+var mainFolder = {name: "csc415" , owner: "Yongcai", time: "05/09/2016", access: "r--r-----", type: "folder", file: mainFDir, hashMap: mainHashMap, parentF: "null"};
 
  jMap = [jagatFolder, jagatHashMap];
  mMap = [mansiFolder, mansiHashMap];

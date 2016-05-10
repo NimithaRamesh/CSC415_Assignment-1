@@ -54,20 +54,15 @@ function loadingCompleted() {
 	per = "";
 	
 	if (loadindex == loadingDevice.length) {
-		//keyBDflag1 = true;
 		loadindex = 0;
 		loadingCounter = 0;
 		document.getElementById('displaydevice').innerHTML = ""
-		//newLineReset();	
 		login();
 	}
 }
 
  initd();
- 
-
- 
-
+ login();
 
 /*
 IOdevice

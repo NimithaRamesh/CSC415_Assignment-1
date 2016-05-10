@@ -283,11 +283,9 @@ function commandCall(input) {
 		break;
 		
 		case 'copyOver.js':
-			if (dirIndex == 1) {
-				copyOver(5);
-			} else {
 			
-			}
+			copyOver(5);
+			
 		break;
 
 		case 'test.js':
