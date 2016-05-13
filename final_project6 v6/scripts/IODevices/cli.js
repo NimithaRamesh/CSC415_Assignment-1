@@ -12,10 +12,15 @@ commandHashMap["delete"]= "delete";
 commandHashMap["dir"]= "dir";
 commandHashMap["cd"] = "cd";
 commandHashMap["copyOver.js"] = "copy a file over and over again";
-commandHashMap["test.js"]= "Test case";
-
 commandHashMap["checkfile"]="checkfile";
 commandHashMap["printfiles"]="printfiles";
+commandHashMap["showUser"]= "showUser";
+commandHashMap["newuser"]= "newuser";
+commandHashMap["changepw"]= "changepw";
+commandHashMap["deleteuser"]= "deleteuser";
+commandHashMap["chmod"] = "Change Permission";
+
+commandHashMap["test.js"]= "Test case";
 
 var ignoreKeys = {};
 ignoreKeys["Tab"]= "Tab";
@@ -43,6 +48,11 @@ manPages["copy"]= "Copy a file with a new name.";
 manPages["delete"]= "Delete a file.";
 manPages["dir"]= "Return the amount of avaiable drive space";
 manPages["cd"] = "Change working directory to desired directory.";
+manPages["showUser"]= "showUser";
+manPages["newuser"]= "Creates a new user";
+manPages["changepw"] = "Changes password of a user";
+manPages["deleteuser"] = "Deletes a user"
+manPages["chmod"] = "Change a file permission";
 
 var currentDir = [mainFolder, mainHashMap];
 var loginFlag1 = false;
@@ -60,6 +70,9 @@ function parseString(inputString) {
 			if (currentDir[1].hasOwnProperty(input[0])) { // check if the file is on our list.
 				processesCall(input);
 			} else {
+				
+				
+				//ddd
 				document.getElementById("displaydevice").innerHTML  += "<br>Error. Undectected command and/or file.<br>";
 			}
 		}
@@ -128,7 +141,6 @@ function checkPassword(passwordl) {
 }
 
 function ls() {
-	
 	for (var i = 0; i < currentDir[0].file.length; i++) {
 		document.getElementById("displaydevice").innerHTML  += "<br>" 
 		+ currentDir[0].file[i].access
@@ -290,7 +302,6 @@ function dir(){
     document.getElementById("displaydevice").innerHTML += "Amount of avaliable drive space: " + available_Space;
 }
 
-
 function checkFile(file) {
 	if(checkFilesMap.hasOwnProperty(file)) {
 		document.getElementById("displaydevice").innerHTML += "<br>" + "File: " + file + "&nbsp&nbsp&nbsp&nbsp&nbsp" + checkFilesMap[file];
@@ -300,5 +311,93 @@ function checkFile(file) {
 function printFiles() {
 	for (var i in checkFilesMap) {
 		document.getElementById("displaydevice").innerHTML += "<br>" + i;
+	}
+}
+
+function isSuperUser() {
+    for(var i = 0; i<superUsers.length; i++){
+        if(superUsers[i][0] == currentUser){
+            return true;
+        }
+        else
+            return false
+    }
+}
+
+function showAllUser() {
+	if (isSuperUser()) {
+		for(var i = 0; i < arrayOfUsers.length; i++) {
+			
+			document.getElementById("displaydevice").innerHTML += "<br>Username: " + arrayOfUsers[i][0] + "&nbsp&nbsp&nbsp&nbsp" + " Password: " + arrayOfUsers[i][1];
+		}
+	} else {
+		document.getElementById("displaydevice").innerHTML += "Action unauthorized";
+	}
+}
+
+function addUser(input){
+    if(isSuperUser()){
+		if(superUsers[0][0] != input[1]) {
+			for(var i = 0; i< arrayOfUsers.length; i++){
+				if(arrayOfUsers[i][0] == input[1]){
+					document.getElementById("displaydevice").innerHTML += "That username has already been taken.";
+					return;
+				}
+			}	
+			var newUser = [input[1],input[2]];
+			arrayOfUsers.push(newUser);
+		}	
+    }
+    else
+        document.getElementById("displaydevice").innerHTML += "Action unauthorized";
+}
+
+function changePassword(input){
+    if(isSuperUser()){
+        for(var i = 0; i < arrayOfUsers.length; i++){
+            if(arrayOfUsers[i][0] == input[1]){
+                arrayOfUsers[i][1] = input[2];
+                return;
+            }
+        }
+        document.getElementById("displaydevice").innerHTML += "User not found";
+    }
+    else
+        document.getElementById("displaydevice").innerHTML += "Action unauthorized";
+}
+
+function deleteUser(input){
+    if(isSuperUser()){
+        for(var i = 0; i < arrayOfUsers.length; i++){
+            if(arrayOfUsers[i][0] == input[1]){
+                arrayOfUsers.splice(i, 1);
+                return;
+            }
+        }
+        document.getElementById("displaydevice").innerHTML += "User not found";
+    }
+    else
+        document.getElementById("displaydevice").innerHTML += "Action unauthorized";
+}
+
+function chmod(perm)
+{
+	if(isSuperUser())
+	{
+		for(var i = 0; i < currentDir[0].file.length; i++)
+		{
+			if(currentDir[0].file[i].name == perm[1] && currentDir[0].file[i].type == "file")
+			{
+				currentDir[0].file[i].access = perm[2];
+				document.getElementById("displaydevice").innerHTML += "<br> The file, " + perm[1] + ", is successful changed the permission.";
+				return;
+			}
+		}
+		document.getElementById("displaydevice").innerHTML += "File not found";
+	}
+	else
+	{
+		document.getElementById("displaydevice").innerHTML += " <br> Permission Denied! ";
+		
 	}
 }

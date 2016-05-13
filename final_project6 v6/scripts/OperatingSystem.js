@@ -257,11 +257,7 @@ function commandCall(input) {
 		case 'kill':
 			kill(input[1]);
 		break;
-		/*
-		case 'wc':
-		
-		break;
-		*/
+
 		case 'copy':
 			copy(input);
 		break;
@@ -283,17 +279,9 @@ function commandCall(input) {
 		break;
 		
 		case 'copyOver.js':
-			
 			copyOver(5);
-			
 		break;
-
-		case 'test.js':
-                //initd();
-				//diningPhilosophers();
-				testcase();
-        break;
-		
+	
 		case 'checkfile':
 			checkFile(input[1]);
 		break;
@@ -301,7 +289,30 @@ function commandCall(input) {
 		case 'printfiles':
 			printFiles();
 		break;
-			  
+		
+		case 'showUser':
+			showAllUser(); 
+		break;
+		
+		case 'newuser':
+			addUser(input);
+		break;
+	
+		case 'changepw':
+			changePassword(input);
+		break;
+		
+		case 'deleteuser':
+			deleteUser(input);
+		break;
+	
+		case 'chmod':
+        	chmod(input);
+        break;
+			
+		case 'test.js':
+				testcase();
+        break;			  
 		
 		default: // Error
 		
