@@ -44,24 +44,23 @@ admin : admin123
 
 <strong>showUser </strong>
 
-// prints all usernames and passwords
+// prints all usernames and passwords (admin access required)
 
 <strong>newuser newUserName newPassword</strong>
 
-// Adds a new user 
+// Adds a new user (admin access required)
 
 <strong>changepw userName newPassword</strong>
 
-// Changes an existing user's password
+// Changes an existing user's password (admin access required)
 
 <strong>deleteUser userName</strong>
 
-// Deletes specified user
+// Deletes specified user (admin access required)
 
 <strong>chmod fileName newPermission</strong>
 
-// changes permissions of the specified file
-
+// changes permissions of the specified file (admin access required)
 
 
 <h2> OTHER FEATURES:</h2>
