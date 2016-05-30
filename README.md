@@ -1,2 +1,3 @@
-# CSC415_OperatingSystem
-test
+#Final Presentation - What is an OS?
+
+This branch contains the individal cotributions of all team members towards the final presentation
