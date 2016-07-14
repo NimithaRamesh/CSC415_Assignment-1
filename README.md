@@ -1,7 +1,5 @@
 # CSC415_OperatingSystem
 
-# CSC415_OperatingSystem
-
 RUNNING INSTRUCTIONS:
 
 Step 1:
