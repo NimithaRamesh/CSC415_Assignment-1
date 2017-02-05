@@ -54,7 +54,7 @@ admin : admin123
 
 // Changes an existing user's password (admin access required)
 
-<strong>deleteUser userName</strong>
+<strong>deleteuser userName</strong>
 
 // Deletes specified user (admin access required)
 
