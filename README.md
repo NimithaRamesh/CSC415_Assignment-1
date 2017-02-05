@@ -18,17 +18,17 @@ Step 3:
 
 * Type in the command that you want to test.
 
-*****New Process****
+*****New Processes*****
 
-The new process added to Project 4 are:
+The new processes added to Project 4 are:
 - characterCounter.js
 - dijkstra.js
 
 This process simulates a multithreaded environment. Multiple threads read from the same file and update a single shared array of character counts. The process uses Mutex locks to avoid a race condition.
 
-To run and test a process, type their name. For example: characterCountr.js [Enter]
+To run and test a process, type it's name. For example: characterCounter.js [Enter]
 
-*****COMMANDS*****
+*****COMMANDS******
 
 cat FileName
 
