@@ -25,7 +25,7 @@ This project now implements directory structures.
 
 It returns a memory error when a 100 MB limit is reached. 
 
-Includes a process that copies a file over and over again - /Mansi/copyOver.js
+Includes a process that copies a file over and over again (File: /Mansi/copyOver.js)
 
 
 COMMANDS:
