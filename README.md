@@ -8,7 +8,7 @@ Step 1:
 
 Step 2:
 
-* Open the file "Display.html" on browser (Firefox).
+* Open the file "Output.html" on browser (Firefox).
 
 * To view the web console, go to Tools -> Web Developer -> Web Console (Firefox)
 
